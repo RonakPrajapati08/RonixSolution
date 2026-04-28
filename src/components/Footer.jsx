@@ -61,8 +61,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-600 text-sm">© {new Date().getFullYear()} NexusLab. All rights reserved.</p>
-          <p className="text-slate-600 text-sm">Built with React & Tailwind CSS</p>
+          <p className="text-slate-600 text-sm">© {new Date().getFullYear()} RonixSolution. All rights reserved.</p>
+          {/* <p className="text-slate-600 text-sm">Built with React & Tailwind CSS</p> */}
         </div>
       </div>
     </footer>

@@ -38,11 +38,11 @@ export const services = [
 ]
 
 export const projects = [
-  { title: 'Vaultly', category: 'FinTech', description: 'Personal finance dashboard with real-time analytics and budget automation.', color: '#C8FF57' },
-  { title: 'Orbital', category: 'SaaS', description: 'Project management platform serving 12,000+ teams across 40 countries.', color: '#60CFFF' },
-  { title: 'Bloom', category: 'E-Commerce', description: 'Direct-to-consumer plant brand scaling from $0 to $2M ARR in 18 months.', color: '#FB923C' },
+  { title: 'CRM & ERP', category: 'Business', description: 'Personal finance dashboard with real-time analytics and leads automation.', color: '#C8FF57' },
+  { title: 'Inverntory Management', category: 'SaaS', description: 'Project management platform serving 12,000+ teams across 40 countries.', color: '#60CFFF' },
+  { title: 'clothes', category: 'E-Commerce', description: 'Direct-to-consumer plant brand scaling from $0 to $2M ARR in 18 months.', color: '#FB923C' },
   { title: 'Pulse AI', category: 'AI / ML', description: 'Real-time sentiment analysis dashboard for enterprise social listening.', color: '#A78BFA' },
-  { title: 'TrailMap', category: 'Mobile App', description: 'Offline-first hiking app with AR trail overlay — 200k+ downloads.', color: '#34D399' },
+  { title: 'Notes App', category: 'Mobile App', description: 'Offline-first hiking app with AR trail overlay — 200k+ downloads.', color: '#34D399' },
   { title: 'Nexora', category: 'Web App', description: 'B2B prospecting tool with AI-powered lead scoring and enrichment.', color: '#F472B6' },
 ]
 

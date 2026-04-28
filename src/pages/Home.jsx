@@ -42,9 +42,9 @@ function Hero() {
         {/* Stats strip */}
         <div className="mt-20 inline-grid grid-cols-3 divide-x divide-white/10 bg-white/3 border border-white/8 rounded-2xl overflow-hidden">
           {[
-            { n: '120+', label: 'Projects Shipped' },
-            { n: '$40M+', label: 'Client Revenue Generated' },
-            { n: '98%', label: 'Client Satisfaction' },
+            { n: '05', label: 'Projects Shipped' },
+            { n: '₹6M+', label: 'Client Revenue Generated' },
+            { n: '99%', label: 'Client Satisfaction' },
           ].map(({ n, label }) => (
             <div key={label} className="px-8 py-5 text-center">
               <div className="font-display font-bold text-2xl text-white">{n}</div>
@@ -82,10 +82,10 @@ function AboutPreview() {
         </div>
         <div className="grid grid-cols-2 gap-4">
           {[
-            { label: 'Founded', value: '2019' },
-            { label: 'Team Size', value: '24' },
-            { label: 'Countries', value: '18' },
-            { label: 'Industries', value: '12+' },
+            { label: 'Founded', value: '2024' },
+            { label: 'Team Size', value: '05' },
+            { label: 'City', value: '18' },
+            { label: 'Industries', value: '5+' },
           ].map(({ label, value }) => (
             <div key={label} className="card-glass rounded-2xl p-6 text-center">
               <div className="font-display font-bold text-4xl text-white mb-1">{value}</div>
