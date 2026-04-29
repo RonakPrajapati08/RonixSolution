@@ -9,7 +9,7 @@ const contactInfo = [
       </svg>
     ),
     label: 'Email',
-    value: 'hello@nexuslab.io',
+    value: 'hello@ronixsolution.io',
     sub: 'We reply within 24 hours',
   },
   {
@@ -19,8 +19,8 @@ const contactInfo = [
       </svg>
     ),
     label: 'Phone',
-    value: '+1 (415) 555-0192',
-    sub: 'Mon–Fri, 9am–6pm PT',
+    value: '+91 99254 35830',
+    sub: 'Mon–Sun, 9am–9pm PT',
   },
   {
     icon: (
@@ -31,12 +31,12 @@ const contactInfo = [
     ),
     label: 'Office',
     value: '340 Pine Street, Suite 800',
-    sub: 'San Francisco, CA 94104',
+    sub: 'Vastrapur, Ahmedabad 380015',
   },
 ]
 
 const projectTypes = ['Web Application', 'Mobile App', 'UI/UX Design', 'E-Commerce', 'API Development', 'Other']
-const budgets = ['$2k – $5k', '$5k – $15k', '$15k – $50k', '$50k+', 'Not sure yet']
+const budgets = ['₹10k – ₹15k', '₹20k – ₹30k', '₹30k – ₹50k', '₹50k+', 'Not sure yet']
 
 function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', company: '', type: '', budget: '', message: '' })

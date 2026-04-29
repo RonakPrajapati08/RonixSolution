@@ -1,6 +1,6 @@
 import SectionHeader from '../components/SectionHeader'
 import TeamCard from '../components/TeamCard'
-import { team } from '../data'
+import { team, timeline } from '../data'
 import { Link } from 'react-router-dom'
 
 function PageHero() {
@@ -59,15 +59,48 @@ function CompanyIntro() {
   )
 }
 
+function Timeline() {
+  return (
+    <section className="py-24 max-w-7xl mx-auto px-6">
+      <SectionHeader
+        eyebrow="Our Journey"
+        title="Company timeline"
+        subtitle="From frustration to building the agency we wanted to work with."
+      />
+      <div className="max-w-2xl mx-auto">
+        {timeline.map((item, i) => (
+          <div key={i} className="relative mb-12 last:mb-0">
+            {/* Connector line */}
+            {i !== timeline.length - 1 && (
+              <div className="absolute left-5 top-16 h-12 w-px bg-gradient-to-b from-[#C8FF57] to-transparent opacity-30" />
+            )}
+
+            {/* Timeline item */}
+            <div className="flex gap-8 items-start">
+              {/* Timeline dot */}
+              <div className="flex items-center gap-4 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#C8FF57] border-4 border-[#0D1117] flex items-center justify-center text-lg">
+                  {item.icon}
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="card-glass rounded-2xl p-6 flex-1 mt-0.5">
+                <p className="text-[#C8FF57] text-sm font-mono font-bold mb-2">{item.year}</p>
+                <p className="text-white font-display font-semibold text-lg">{item.event}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function MissionVision() {
   return (
     <section className="py-24 bg-[#080B12]">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionHeader
-          eyebrow="Our Purpose"
-          title="Mission & Vision"
-          subtitle="The principles that guide every decision we make."
-        />
         <div className="grid md:grid-cols-2 gap-6">
           <div className="card-glass rounded-2xl p-8">
             <div className="w-10 h-10 rounded-xl bg-[#C8FF57]/10 flex items-center justify-center text-[#C8FF57] mb-5 text-lg">◎</div>
@@ -179,6 +212,7 @@ export default function About() {
     <>
       <PageHero />
       <CompanyIntro />
+      <Timeline />
       <MissionVision />
       <Team />
       <WhyUs />
