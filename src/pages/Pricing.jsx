@@ -81,6 +81,117 @@ function Plans() {
   )
 }
 
+function WhyOurPricing() {
+  return (
+    <section className="py-24 max-w-3xl mx-auto px-6 text-center">
+      <h2 className="font-display font-bold text-4xl md:text-5xl text-white mb-6">
+        Built for Growth, Priced for Trust
+      </h2>
+      <p className="text-slate-400 text-lg leading-relaxed">
+        We build scalable digital solutions that help businesses grow faster. Our optimized workflows and reusable systems allow us to deliver premium quality at competitive pricing — without compromising performance, security, or future scalability.
+      </p>
+    </section>
+  )
+}
+
+function ValueSection() {
+  const values = [
+    {
+      title: 'Custom Solutions',
+      description: 'Every solution is carefully designed around your business goals — no templates, no shortcuts.',
+      icon: (
+        <svg className="w-8 h-8 text-[#C8FF57]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      ),
+      bgPattern: (
+        <svg className="absolute -top-10 -right-10 w-32 h-32 opacity-5" fill="none" viewBox="0 0 200 200">
+          <circle cx="50" cy="50" r="40" stroke="#C8FF57" strokeWidth="1" />
+          <circle cx="150" cy="100" r="30" stroke="#C8FF57" strokeWidth="1" />
+          <path d="M 50 10 Q 100 50 150 10" stroke="#C8FF57" strokeWidth="1" fill="none" />
+          <path d="M 30 150 L 170 150" stroke="#C8FF57" strokeWidth="1" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Scalable Systems',
+      description: 'Our systems are built to grow with your business, from startup stage to enterprise scale.',
+      icon: (
+        <svg className="w-8 h-8 text-[#60CFFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      bgPattern: (
+        <svg className="absolute -top-8 -right-8 w-32 h-32 opacity-5" fill="none" viewBox="0 0 200 200">
+          <polyline points="20,150 50,100 80,120 120,40 180,80" stroke="#60CFFF" strokeWidth="1" fill="none" />
+          <circle cx="50" cy="100" r="3" fill="#60CFFF" />
+          <circle cx="80" cy="120" r="3" fill="#60CFFF" />
+          <circle cx="120" cy="40" r="3" fill="#60CFFF" />
+          <rect x="30" y="20" width="140" height="150" stroke="#60CFFF" strokeWidth="1" fill="none" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Long-Term Support',
+      description: 'We don\'t just deliver projects — we support, improve, and scale them with you over time.',
+      icon: (
+        <svg className="w-8 h-8 text-[#C8FF57]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      bgPattern: (
+        <svg className="absolute -top-10 -right-12 w-36 h-36 opacity-5" fill="none" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="60" stroke="#C8FF57" strokeWidth="1" />
+          <circle cx="100" cy="100" r="45" stroke="#C8FF57" strokeWidth="1" />
+          <circle cx="100" cy="100" r="30" stroke="#C8FF57" strokeWidth="1" />
+          <line x1="100" y1="40" x2="100" y2="30" stroke="#C8FF57" strokeWidth="1" />
+          <line x1="100" y1="170" x2="100" y2="160" stroke="#C8FF57" strokeWidth="1" />
+        </svg>
+      ),
+    },
+  ]
+
+  return (
+    <section className="relative pb-24 pt-5 max-w-7xl mx-auto px-6 overflow-hidden">
+      {/* Background glow effect */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-1/4 -translate-x-1/2 w-[500px] h-[500px] bg-[#60CFFF]/5 blur-[120px] rounded-full" />
+        <div className="absolute bottom-10 right-1/3 w-[600px] h-[600px] bg-[#C8FF57]/3 blur-[140px] rounded-full" />
+      </div>
+
+      <div className="relative grid md:grid-cols-3 gap-6">
+        {values.map((value, i) => (
+          <div
+            key={i}
+            className="card-glass rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:scale-[1.02] transition-all duration-300 hover:border-[#C8FF57]/30 cursor-default"
+          >
+            {/* Background pattern */}
+            {value.bgPattern}
+
+            {/* Icon */}
+            <div className="relative z-10 mb-5 inline-flex items-center justify-center">
+              {value.icon}
+            </div>
+
+            {/* Content */}
+            <h3 className="font-display font-bold text-white text-lg mb-4 relative z-10">
+              {value.title}
+            </h3>
+            <p className="text-slate-400 text-sm leading-relaxed relative z-10 flex-grow">
+              {value.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <p className="text-center text-slate-500 text-sm mt-12 relative z-10">
+        While many agencies charge significantly higher for similar solutions, we focus on delivering maximum value through efficient systems and long-term partnerships.
+      </p>
+    </section>
+  )
+}
+
 function Comparison() {
   const CheckIcon = () => (
     <svg className="w-4 h-4 text-[#C8FF57] mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -190,6 +301,8 @@ export default function Pricing() {
     <>
       <PageHero />
       <Plans />
+      <WhyOurPricing />
+      <ValueSection />
       <Comparison />
       <FAQSection />
       <PricingCTA />
