@@ -6,6 +6,9 @@ import ProjectCard from '../components/ProjectCard'
 import TestimonialCard from '../components/TestimonialCard'
 import PricingCard from '../components/PricingCard'
 import { services, projects, testimonials, pricingPlans, technologies, clients, processSteps } from '../data'
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
+
 
 /* ── HERO ──────────────────────────────────────────────────── */
 function Hero() {
@@ -96,73 +99,197 @@ function AboutPreview() {
   return (
     <section className="py-28 max-w-7xl mx-auto px-6">
       <div className="grid md:grid-cols-2 gap-16 items-center">
+
+        {/* LEFT CONTENT */}
         <div>
+
           <span className="inline-block text-xs font-mono tracking-widest text-[#C8FF57] uppercase mb-4 px-3 py-1.5 bg-[#C8FF57]/10 rounded-full border border-[#C8FF57]/20">
             Who We Are
           </span>
+
           <h2 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight mt-2">
-            A team that thinks like founders
+            Building digital solutions that drive real business growth
           </h2>
+
           <p className="mt-5 text-slate-400 leading-relaxed">
-            We started RonixSolution because we were frustrated with agencies that shipped mediocre work slowly. We hire only senior engineers and designers, keep teams lean, and treat every project like it's our own product.
+            RonixSolution is a modern web development agency focused on delivering custom digital solutions 
+            tailored to your business needs. We build high-performance websites, web applications, and tools 
+            that help businesses improve efficiency, enhance user experience, and scale faster.
           </p>
+
           <p className="mt-4 text-slate-400 leading-relaxed">
-            The result? Faster timelines, higher quality, and products that actually move the needle for your business.
+            Our approach is simple — understand your requirements, design smart solutions, and develop systems 
+            that are reliable, secure, and built for long-term growth.
           </p>
-          <Link to="/about" className="inline-flex items-center gap-2 mt-8 text-[#C8FF57] font-display font-semibold text-sm hover:gap-3 transition-all">
-            Meet the team
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+
+          {/* CTA */}
+          <Link 
+            to="/about" 
+            className="inline-flex items-center gap-2 mt-8 text-[#C8FF57] font-display font-semibold text-sm hover:gap-3 transition-all"
+          >
+            Explore More
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </Link>
+
         </div>
+
+        {/* RIGHT STATS */}
         <div className="grid grid-cols-2 gap-4">
           {[
-            { label: 'Founded', value: '2024' },
-            { label: 'Team Size', value: '08' },
-            { label: 'City', value: '12' },
-            { label: 'Industries', value: '10+' },
-          ].map(({ label, value }) => (
-            <div key={label} className="card-glass rounded-2xl p-6 text-center">
-              <div className="font-display font-bold text-4xl text-white mb-1">{value}</div>
-              <div className="text-slate-500 text-sm">{label}</div>
+            {
+              label: "Projects Delivered",
+              value: "100+",
+              sub: "Custom websites & applications",
+            },
+            {
+              label: "Happy Clients",
+              value: "50+",
+              sub: "Trusted by growing businesses",
+            },
+            {
+              label: "Years Experience",
+              value: "5+",
+              sub: "In web development & tech",
+            },
+            {
+              label: "Client Satisfaction",
+              value: "95%",
+              sub: "Long-term partnerships built",
+            },
+          ].map(({ label, value, sub }) => (
+            <div key={label} className="card-glass rounded-2xl p-6">
+              <div className="font-display font-bold text-4xl text-white">
+                {value}
+              </div>
+              <div className="text-[#C8FF57] text-sm font-semibold mt-1">
+                {label}
+              </div>
+              <div className="text-slate-500 text-xs mt-1">{sub}</div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )
 }
 
-/* ── PROCESS ───────────────────────────────────────────────── */
 function Process() {
+  const ref = useRef(null)
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start center", "end center"],
+  })
+
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+
   return (
-    <section className="py-24 bg-[#080B12]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section ref={ref} className="py-28 bg-[#080B12]">
+      <div className="max-w-5xl mx-auto px-6">
+
         <SectionHeader
           eyebrow="How We Work"
-          title="Our proven process"
-          subtitle="A repeatable system that reliably delivers excellent results."
+          title="A simple process built on clarity and trust"
+          subtitle="We follow a step-by-step approach so you always know what’s happening and what comes next."
         />
-        
-        <div className="grid md:grid-cols-5 gap-4 relative">
-          {/* Connecting line */}
-          <div className="hidden md:block absolute top-8 left-[5%] right-[5%] h-px bg-gradient-to-r from-[#C8FF57] to-[#60CFFF] opacity-20" />
 
-          {processSteps.map((item, i) => (
-            <div key={i} className="relative">
-              <div className="card-glass rounded-2xl p-6 text-center relative z-10">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#C8FF57] text-[#0D1117] font-display font-bold text-base mb-4">
-                  {item.step}
-                </div>
-                <h3 className="font-display font-semibold text-white text-lg mb-3">{item.title}</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
-              </div>
-            </div>
-          ))}
+        <div className="relative mt-16">
+
+          {/* Base Line */}
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-white/10" />
+
+          {/* Animated Line */}
+          <motion.div
+            style={{ height: lineHeight }}
+            className="absolute left-6 top-0 w-px bg-gradient-to-b from-[#C8FF57] to-[#60CFFF]"
+          />
+
+          <div className="space-y-14">
+
+            {processSteps.map((item, i) => {
+
+              const progress = useTransform(
+                scrollYProgress,
+                [i * 0.18, (i + 1) * 0.18],
+                [0, 1]
+              )
+
+              const opacity = useTransform(progress, [0, 1], [0.3, 1])
+              const x = useTransform(progress, [0, 1], [40, 0])
+              const scale = useTransform(progress, [0, 1], [0.95, 1])
+              const bgFill = useTransform(progress, [0, 1], ["#ffffff20", "#C8FF57"])
+
+              return (
+                <motion.div
+                  key={i}
+                  style={{ opacity, x, scale }}
+                  className="flex items-start gap-6 group"
+                >
+
+                  {/* Step Circle */}
+                  <motion.div
+                    style={{ backgroundColor: bgFill }}
+                    className="w-12 h-12 flex items-center justify-center rounded-full 
+                    text-[#0D1117] font-display font-bold text-sm z-10 shadow-lg"
+                  >
+                    {item.step}
+                  </motion.div>
+
+                  {/* Card */}
+                  <div className="card-glass rounded-2xl p-6 w-full 
+                    transition-all duration-300 group-hover:-translate-y-1">
+
+                    {/* Icon + Title */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-xl">{item.icon}</span>
+                      <h3 className="font-display font-semibold text-white text-xl">
+                        {item.title}
+                      </h3>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
+
+                  </div>
+
+                </motion.div>
+              )
+            })}
+
+          </div>
+
         </div>
+
+        {/* CTA (VERY IMPORTANT) */}
+        <div className="mt-20 text-center">
+
+          <h3 className="text-white font-display text-2xl mb-4">
+            Ready to turn your idea into a real product?
+          </h3>
+
+          <p className="text-slate-400 mb-6">
+            Let’s build something that actually grows your business.
+          </p>
+
+          <Link
+            to="/contact"
+            className="inline-block px-8 py-3 bg-[#C8FF57] text-[#0D1117] font-semibold rounded-lg hover:bg-[#d4ff70] transition"
+          >
+            Start Your Project
+          </Link>
+
+        </div>
+
       </div>
     </section>
   )
 }
+
 
 /* ── SERVICES OVERVIEW ─────────────────────────────────────── */
 function ServicesOverview() {

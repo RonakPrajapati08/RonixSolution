@@ -455,12 +455,38 @@ export const timeline = [
 ]
 
 export const processSteps = [
-  { step: '01', title: 'Discovery & Strategy', desc: 'We dive deep into your business, market, and users. Weeks 1-2.' },
-  { step: '02', title: 'Design & Planning', desc: 'Wireframes, prototypes, and technical architecture. Weeks 3-4.' },
-  { step: '03', title: 'Development', desc: 'Sprint-based development with weekly demos and code reviews. Weeks 5-12.' },
-  { step: '04', title: 'Testing & Launch', desc: 'QA, performance optimization, and production deployment. Week 13.' },
-  { step: '05', title: 'Support & Growth', desc: 'Post-launch support and ongoing optimization. Month 2+.' },
+  {
+    step: '01',
+    icon: '📊',
+    title: 'We Understand Your Business',
+    desc: 'We analyze your goals, audience, and challenges to ensure the solution is aligned with your business growth.',
+  },
+  {
+    step: '02',
+    icon: '🎨',
+    title: 'We Plan & Design Smartly',
+    desc: 'We create intuitive designs and structured layouts focused on user experience and performance.',
+  },
+  {
+    step: '03',
+    icon: '💻',
+    title: 'We Build Your Solution',
+    desc: 'We develop fast, secure, and scalable websites or applications using modern technologies.',
+  },
+  {
+    step: '04',
+    icon: '🧪',
+    title: 'We Test & Optimize',
+    desc: 'We ensure everything works perfectly with testing, performance optimization, and bug fixing.',
+  },
+  {
+    step: '05',
+    icon: '🚀',
+    title: 'We Support & Grow',
+    desc: 'After launch, we continuously improve and scale your product for long-term success.',
+  },
 ]
+
 
 export const clients = [
   { name: 'Vaultly', logo: '🏦' },
